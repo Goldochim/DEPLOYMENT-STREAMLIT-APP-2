@@ -21,9 +21,9 @@ def welcome():
 # the data which the user inputs
 
 
-def predictionfnc(age, sex, cp, sc, tstr, rer, nmv, rbp, spe, sdierr):
+def predictionfnc(age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sdierr):
 
-    prediction = classifier.predict([[age, sex, cp, sc, tstr, rer, nmv, rbp, spe, sdierr]])
+    prediction = classifier.predict([[age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sdierr]])
     print(prediction)
     if (prediction[0] == 0):
         return 'NO HEART FAILURE'
@@ -94,13 +94,29 @@ def main():
         spe=3
     
     sdierr = st.number_input("sdierr: ", 0.0, 6.2, step=0.1)
+    eia = st.selectbox(
+        "eia: ", ('1-Yes', '0-No'))
+    if eia=='1-Yes':
+        eia=1
+    else:
+        eia=0
+    mhra = st.number_input("mhra: ", 60.0, 100.0, step=1.0)   
+    fbs = st.selectbox(
+        "fbs > 120 mg/dl: ", ('1-True', '0-False'))
+    if fbs=='1-True':
+        fbs=1
+    else:
+        fbs=0
+        
+    
+    
     result = ""
 
     # the below line ensures that when the button called 'Predict' is clicked,
     # the prediction function defined above is called to make the prediction
     # and store it in the variable result.
     if st.button("Predict"):
-        result = predictionfnc(age, sex, cp, sc, tstr, rer, nmv, rbp, spe, sdierr)
+        result = predictionfnc(age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sdierr)
     st.success(result)
 
 
