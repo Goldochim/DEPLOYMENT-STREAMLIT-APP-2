@@ -35,8 +35,8 @@ def predictionfnc(age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sd
 # this is the main function in which we define our webpage
 def main():
     html_temp = """
-    <div style="background-color:tomato;padding:8px">
-    <h1 style="color:white;text-align:center;"> Heart Failure Predictor-AdaBoost J48 </h1>
+    <div style="background-color:royal blue;padding:8px">
+    <h1 style="color:white;text-align:center;"> Heart Failure Predictor-Random Forest </h1>
     </div>
     """
     
