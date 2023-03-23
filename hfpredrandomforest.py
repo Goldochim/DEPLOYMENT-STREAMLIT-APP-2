@@ -36,7 +36,7 @@ def predictionfnc(age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sd
 def main():
     html_temp = """
     <div style="background-color:navy;padding:7px">
-    <h1 style="color:white;text-align:center;"> Heart Failure Predictor-Random Forest </h1>
+    <h2 style="color:white;text-align:center;"> Heart Failure Predictor-Random Forest </h2>
     </div>
     """
     
