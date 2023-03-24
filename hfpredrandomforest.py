@@ -25,7 +25,7 @@ def predictionfnc(age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sd
 
     prediction = classifier.predict([[age, sex, cp, sc, fbs, tstr, eia, rer, mhra, nmv, rbp, spe, sdierr]])
     print(prediction)
-   if (prediction== ['No']):
+    if (prediction== ['No']):
         return 'NO HEART FAILURE'
     else:
         return 'WARNING!!! HEART FAILURE PREDICTED'
