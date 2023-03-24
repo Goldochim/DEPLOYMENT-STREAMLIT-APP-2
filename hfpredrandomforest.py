@@ -100,7 +100,7 @@ def main():
         eia=1
     else:
         eia=0
-    mhra = st.number_input("mhra: ", 60.0, 100.0, step=1.0)   
+    mhra = st.number_input("mhra: ", 60.0, 200.0, step=1.0)   
     fbs = st.selectbox(
         "fbs > 120 mg/dl: ", ('1-Yes', '0-No'))
     if fbs=='1-True':
